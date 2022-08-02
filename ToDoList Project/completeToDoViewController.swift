@@ -28,8 +28,20 @@ class completeToDoViewController: UIViewController {
         //allows for deletion
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
             if let theToDo = selectedToDo{
+                titleLabel.text = "YAY. Congratulations-- on to the next task"
                 context.delete(theToDo)
-                navigationController?.popViewController(animated: true)
+                /*navigationController?.popViewController(animated: true)*/
+            }
+        }
+    }
+    
+    
+    @IBAction func deleteButton(_ sender: Any) {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+            if let theToDo = selectedToDo{
+                titleLabel.text = "YAY. Congratulations-- on to the next task"
+                context.delete(theToDo)
+                /*navigationController?.popViewController(animated: true)*/
             }
         }
     }
